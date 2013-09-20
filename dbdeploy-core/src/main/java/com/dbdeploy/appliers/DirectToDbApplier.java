@@ -48,9 +48,9 @@ public class DirectToDbApplier implements ChangeScriptApplier {
 		for (int i = 0; i < statements.size(); i++) {
 			String statement = statements.get(i);
 			try {
-				if (statements.size() > 1) {
-					System.err.println(" -> statement " + (i+1) + " of " + statements.size() + "...");
-				}
+				// if (statements.size() > 1) {
+				// 	System.err.println(" -> statement " + (i+1) + " of " + statements.size() + "...");
+				// }
 				queryExecuter.execute(statement);
 			} catch (SQLException e) {
 				throw new ChangeScriptFailedException(e, script, i+1, statement);
